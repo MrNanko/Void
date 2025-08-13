@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="tags">
+    <header class="page-header">
+        {{ $tags := .Site.Taxonomies.tags }}
+    </header>
+    
+    <!-- Tag Cloud -->
+    <div class="tag-cloud">
+        {{ range $tags.Alphabetical }}
+        {{ $fontSize := 0.6 }}
+        {{ if ge .Count 10 }}{{ $fontSize = 2.5 }}
+        {{ else if ge .Count 7 }}{{ $fontSize = 2.0 }}
+        {{ else if ge .Count 5 }}{{ $fontSize = 1.5 }}
+        {{ else if ge .Count 3 }}{{ $fontSize = 1.1 }}
+        {{ else if ge .Count 2 }}{{ $fontSize = 0.8 }}
+        {{ end }}
+        <a href="{{ .Page.Permalink }}" style="font-size: {{ $fontSize }}rem;">
+            {{ .Page.Title }}
+        </a>
+        {{ end }}
+    </div>
+    
+    <div class="tags-content">
+        {{ range $tags.Alphabetical }}
+        <div class="tag-group">
+            <h2 class="tag-title">{{ .Page.Title | upper }}</h2>
+            <div class="tag-posts">
+                {{ range .Pages }}
+                <article class="tag-post">
+                    <div class="tag-date">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format "2006-01-02" }}
+                        </time>
+                    </div>
+                    <div class="tag-content">
+                        <h3 class="tag-post-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

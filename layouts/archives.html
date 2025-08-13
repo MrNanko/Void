@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="archives">
+    <header class="page-header">
+        {{ $posts := where .Site.RegularPages "Type" "posts" }}
+        <p class="page-description">There are {{ len $posts }} posts in total till now.</p>
+    </header>
+    
+    <div class="archives-content">
+        {{ $posts := where .Site.RegularPages "Type" "posts" }}
+        {{ $postsByYear := $posts.GroupByDate "2006" }}
+        
+        {{ range $postsByYear }}
+        <div class="year-group">
+            <h2 class="year-title">{{ .Key }}</h2>
+            <div class="year-posts">
+                {{ range .Pages }}
+                <article class="archive-post">
+                    <div class="archive-date">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format "2006-01-02" }}
+                        </time>
+                    </div>
+                    <div class="archive-content">
+                        <h3 class="archive-title">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </h3>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
