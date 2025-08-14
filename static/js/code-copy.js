@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     codeBlocks.forEach(function(codeBlock) {
         const pre = codeBlock.parentElement;
         
-        // 检查是否有行号 - 如果有.lntable或行号span则跳过
-        if (pre.closest('.highlight.lntable') || 
-            codeBlock.querySelector('span[style*="user-select:none"]')) {
+        // 检查是否是行号列的代码块 - 如果是行号列则跳过
+        if (pre.closest('td.lntd') && 
+            pre.closest('td.lntd').querySelector('.lnt')) {
             return;
         }
         
