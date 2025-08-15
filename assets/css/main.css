@@ -542,6 +542,56 @@ blockquote {
     line-height: 1.6;
 }
 
+/* Social Links */
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    background-color: transparent;
+}
+
+.social-link:hover {
+    transform: translateY(-1px);
+    border: none;
+}
+
+/* Platform-specific colors */
+.social-link[title="GitHub"] {
+    color: #181717;
+}
+
+.social-link[title="Email"] {
+    color: #ea4335;
+}
+
+.social-link[title="X"] {
+    color: #000000;
+}
+
+.social-link[title="LinkedIn"] {
+    color: #0a66c2;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
 .recent-posts h2 {
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
