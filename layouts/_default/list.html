@@ -7,27 +7,27 @@
     </div>
     {{ else if eq .Section "" }}
     <div class="page-description">
-        <p>共收录 {{ len .Pages }} 个内容分类</p>
+        <p>{{ len .Pages }} content sections in total</p>
     </div>
     {{ else }}
     <div class="page-description">
-        <p>{{ .Section | title }} - 共 {{ len .Pages }} 项内容</p>
+        <p>{{ .Section | title }} - {{ len .Pages }} items in total</p>
     </div>
     {{ end }}
 </div>
 
 {{ if eq .Section "" }}
-<!-- 主页内容分类列表 -->
+<!-- Homepage content sections list -->
 <div class="content-sections">
     {{ range .Site.Sections }}
     {{ if ne .Section "tags" }}
     <div class="section-item">
         <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <p>{{ .Params.description | default (printf "%s 分类" .Title) }}</p>
+        <p>{{ .Params.description | default (printf "%s section" .Title) }}</p>
         <div class="section-meta">
-            <span class="post-count">{{ len .Pages }} 项内容</span>
+            <span class="post-count">{{ len .Pages }} items</span>
             {{ if .Pages }}
-            <span class="last-updated">最后更新: {{ (.Pages.ByLastmod.Reverse | first 1).Date.Format "2006-01-02" }}</span>
+            <span class="last-updated">Last updated: {{ (.Pages.ByLastmod.Reverse | first 1).Date.Format "2006-01-02" }}</span>
             {{ end }}
         </div>
     </div>
@@ -35,7 +35,7 @@
     {{ end }}
 </div>
 {{ else }}
-<!-- 具体分类的文章列表 -->
+<!-- Article list for specific sections -->
 <div class="post-list">
     {{ range .Paginator.Pages }}
     <article class="post-summary">
