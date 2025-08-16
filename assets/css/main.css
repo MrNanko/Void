@@ -1026,6 +1026,62 @@ blockquote {
     line-height: 1.6;
 }
 
+/* Content Sections */
+.content-sections {
+    margin-bottom: 3rem;
+}
+
+.section-item {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.section-item:hover {
+    background-color: #f0f2f5;
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.section-item h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.section-item h2 a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.section-item h2 a:hover {
+    color: var(--link-color);
+}
+
+.section-item p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.section-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.post-count {
+    font-weight: 500;
+}
+
+.last-updated {
+    color: var(--text-light);
+}
+
 /* Archives Page */
 .archives {
     margin-bottom: 3rem;

@@ -5,9 +5,37 @@
     <div class="page-description">
         {{ .Content }}
     </div>
+    {{ else if eq .Section "" }}
+    <div class="page-description">
+        <p>共收录 {{ len .Pages }} 个内容分类</p>
+    </div>
+    {{ else }}
+    <div class="page-description">
+        <p>{{ .Section | title }} - 共 {{ len .Pages }} 项内容</p>
+    </div>
     {{ end }}
 </div>
 
+{{ if eq .Section "" }}
+<!-- 主页内容分类列表 -->
+<div class="content-sections">
+    {{ range .Site.Sections }}
+    {{ if ne .Section "tags" }}
+    <div class="section-item">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <p>{{ .Params.description | default (printf "%s 分类" .Title) }}</p>
+        <div class="section-meta">
+            <span class="post-count">{{ len .Pages }} 项内容</span>
+            {{ if .Pages }}
+            <span class="last-updated">最后更新: {{ (.Pages.ByLastmod.Reverse | first 1).Date.Format "2006-01-02" }}</span>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+{{ else }}
+<!-- 具体分类的文章列表 -->
 <div class="post-list">
     {{ range .Paginator.Pages }}
     <article class="post-summary">
@@ -16,7 +44,9 @@
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
             </h2>
             <div class="post-meta">
+                {{ if .Date }}
                 <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ end }}
                 {{ if .Params.tags }}
                 <span class="post-tags">
                     {{ range .Params.tags }}
@@ -37,4 +67,5 @@
 </div>
 
 {{ partial "pagination.html" . }}
+{{ end }}
 {{ end }}
