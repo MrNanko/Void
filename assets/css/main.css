@@ -161,7 +161,7 @@ pre {
     border: 1px solid #e1e4e8;
     position: relative;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.5;
     tab-size: 4;
     -moz-tab-size: 4;
     -o-tab-size: 4;
@@ -179,7 +179,7 @@ pre code {
     background: none;
     padding: 0.8rem;
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1.5;
     color: var(--text-color);
     display: block;
     border: none;
@@ -215,7 +215,7 @@ pre code {
     border-radius: 0;
     padding: 0;
     overflow-x: auto;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 /* Line number table styling */
@@ -250,7 +250,7 @@ pre code {
     color: #959da5;
     user-select: none;
     font-size: 13px;
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 /* Code content column */
@@ -262,7 +262,7 @@ pre code {
     padding: 0.5rem 0.5rem;
     background: #f6f8fa;
     color: var(--text-color);
-    line-height: 1.2;
+    line-height: 1.5;
 }
 
 /* Line number spans */
@@ -270,7 +270,7 @@ pre code {
     color: #959da5;
     user-select: none;
     font-size: 13px;
-    line-height: 1.2;
+    line-height: 1.5;
     margin-right: 0.2em !important;
     padding: 0 0.2em 0 0.2em !important;
 }
@@ -292,7 +292,6 @@ pre code {
 
 /* No line numbers version */
 /*.highlight:not(.lntable) pre {*/
-/*    padding: 1rem;*/
 /*}*/
 
 /* Enhanced Syntax highlighting colors (GitHub style with improvements) */
@@ -467,13 +466,22 @@ pre[style*="background-color:#fff"] code span[style*="user-select:none"] {
     margin-right: 0.1em !important;
     padding: 0 0.1em 0 0.1em !important;
     font-size: 13px !important;
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
 }
 
 /* Alternative selector for line numbers */
 .highlight pre code span[style*="margin-right:0.4em"] {
     margin-right: 0.1em !important;
     padding: 0 0.1em 0 0.1em !important;
+}
+
+/* Improve selection appearance in code blocks (prevents faint horizontal seams) */
+pre::selection,
+pre code::selection,
+.highlight ::selection {
+    background: rgba(0, 123, 255, 0.18);
+    color: inherit;
+    text-shadow: none;
 }
 
 /* Copy Button */
