@@ -13,6 +13,10 @@
     --link-color: #00bfff;
     --link-hover: #1e90ff;
     
+    /* Code colors */
+    --code-block-bg: #f2f4f7;   /* slightly darker gray */
+    --code-inline-bg: #f2f4f7;  /* slightly darker inline chip */
+    
     /* Typography */
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Inconsolata', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
@@ -145,7 +149,7 @@ li {
 code {
     font-family: var(--font-mono);
     font-size: 14px;
-    background-color: #f5f6fc;
+    background-color: var(--code-inline-bg);
     padding: 0.1rem 0.3rem;
     border-radius: 3px;
     color: var(--text-color);
@@ -153,12 +157,12 @@ code {
 }
 
 pre {
-    background-color: #f6f8fa;
+    background-color: var(--code-block-bg);
     padding: 0;
     border-radius: 4px;
     overflow-x: auto;
     margin: 1rem 0;
-    border: 1px solid #e1e4e8;
+    border: none;
     position: relative;
     font-size: 14px;
     line-height: 1.5;
@@ -189,9 +193,9 @@ pre code {
 .highlight {
     position: relative;
     margin: 1rem 0;
-    background-color: #f6f8fa;
+    background-color: var(--code-block-bg);
     border-radius: 4px;
-    border: 1px solid #e1e4e8;
+    border: none;
     overflow-x: auto;
     font-size: 14px;
     max-width: 100%;
@@ -236,7 +240,7 @@ pre code {
 
 /* Line numbers column */
 .highlight .lntd:first-child {
-    background-color: #f6f8fa;
+    background-color: var(--code-block-bg);
     border-right: none;
     width: 50px;
     min-width: 50px;
@@ -244,7 +248,7 @@ pre code {
 }
 
 .highlight .lntd:first-child pre {
-    background-color: #f6f8fa;
+    background-color: var(--code-block-bg);
     padding: 0.5rem 0.3rem;
     text-align: right;
     color: #959da5;
@@ -260,7 +264,7 @@ pre code {
 
 .highlight .lntd:last-child pre {
     padding: 0.5rem 0.5rem;
-    background: #f6f8fa;
+    background: var(--code-block-bg);
     color: var(--text-color);
     line-height: 1.5;
 }
@@ -382,7 +386,7 @@ pre code {
 /* Template literals and interpolation - blue */
 .highlight .si { 
     color: #032f62;
-    background-color: #f5f6fc;
+    background-color: var(--code-inline-bg);
 }
 
 /* Important/TODO comments - orange background */
@@ -458,7 +462,7 @@ pre code {
 
 /* Override Hugo inline styles for background */
 pre[style*="background-color:#fff"] {
-    background-color: #f6f8fa !important;
+    background-color: var(--code-block-bg) !important;
 }
 
 /* Override inline styles for line numbers */
@@ -489,8 +493,8 @@ pre code::selection,
     position: absolute;
     top: 0.25rem;
     right: 0.25rem;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.04);
+    border: none;
     border-radius: 4px;
     padding: 0.5rem;
     cursor: pointer;
@@ -506,7 +510,7 @@ pre code::selection,
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.07);
     color: var(--text-color);
 }
 
