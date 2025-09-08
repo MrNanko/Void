@@ -9,9 +9,9 @@
     --text-light: #666666;
     --bg-color: #ffffff;
     --bg-light: #e9ecef;
-    --border-color: #e9ecef;
-    --link-color: #00bfff;
-    --link-hover: #1e90ff;
+    --border-color: #d1d1d2;
+    --link-color: #000000; /* match Home read-more */
+    --link-hover: #999999; /* match Home read-more hover */
     
     /* Code colors */
     --code-block-bg: #f2f4f7;   /* slightly darker gray */
@@ -132,6 +132,21 @@ a {
 a:hover {
     color: var(--link-hover);
     text-decoration: underline;
+}
+
+/* Article/content links: default black with gray underline */
+.post-content a {
+    color: var(--link-color); /* keep black */
+    text-decoration: underline;
+    text-decoration-color: var(--border-color); /* light gray underline */
+    text-underline-offset: 0.4em; /* small distance from text */
+    text-decoration-thickness: 0.75px;
+}
+
+.post-content a:hover {
+    color: var(--link-color); /* color unchanged */
+    text-decoration: underline;
+    text-decoration-color: var(--link-color); /* underline turns black */
 }
 
 /* Lists */
