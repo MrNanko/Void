@@ -19,7 +19,7 @@ Void is a clean, minimalist Hugo theme designed for blogs and personal websites.
 
 ## Demo
 
-[Live Demo](https://github.com/MrNanko/void) (Coming soon)
+[Live Demo](https://github.com/MrNanko/Void) (Coming soon)
 
 ## Installation
 
@@ -27,14 +27,14 @@ Void is a clean, minimalist Hugo theme designed for blogs and personal websites.
 
 ```bash
 cd your-hugo-site
-git submodule add https://github.com/MrNanko/void themes/void
+git submodule add https://github.com/MrNanko/Void themes/Void
 ```
 
 ### Method 2: Clone
 
 ```bash
 cd your-hugo-site/themes
-git clone https://github.com/MrNanko/void
+git clone https://github.com/MrNanko/Void
 ```
 
 ### Method 3: Download
@@ -199,4 +199,4 @@ This theme is released under the [MIT License](LICENSE).
 
 ---
 
-Made with ❤️ by [Your Name](https://yourwebsite.com)
+Made with ❤️ by [MrNanko](https://github.com/MrNanko/)

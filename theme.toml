@@ -1,12 +1,12 @@
 name = "Void"
 license = "MIT"
-licenselink = "https://github.com/MrNanko/void/blob/master/LICENSE"
+licenselink = "https://github.com/MrNanko/Void/blob/master/LICENSE"
 description = "A clean, minimalist Hugo theme with elegant typography and modern design"
-homepage = "https://github.com/MrNanko/void"
+homepage = "https://github.com/MrNanko/Void"
 tags = ["blog", "minimal", "clean", "typography", "responsive", "modern"]
 features = ["responsive", "syntax-highlighting", "pagination", "archives", "tags", "categories"]
 min_version = "0.74.0"
 
 [author]
   name = "Mr Nanko"
-  homepage = "https://yourwebsite.com"
+  homepage = "https://github.com/MrNanko/"
